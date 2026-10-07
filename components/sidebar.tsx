@@ -6,7 +6,7 @@ import { Home, FolderKanban, Wrench, Mail, Bookmark } from "lucide-react";
 import Avatar from "@/components/avatar";
 import DateLocation from "@/components/date-location";
 import { profile } from "@/data/profile";
-
+`2`
 
 const navItems = [
   { href: "/", label: "Home", icon: Home },
