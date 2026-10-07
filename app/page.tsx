@@ -23,7 +23,7 @@ export default function Home() {
         <GridPattern />
         <DotScatter />
         <Meteors number={12} />
-        <div className="mx-auto max-w-4xl px-6 py-14 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-20">
           <p className="text-sm text-muted-foreground">{profile.greeting}</p>
 
           <h1 className="mt-4 bg-gradient-to-b from-foreground to-neutral-500 bg-repeat-y bg-clip-text text-3xl font-medium leading-tight text-balance text-transparent [background-size:100%_1.25em] sm:text-5xl">
@@ -32,7 +32,7 @@ export default function Home() {
 
           <p className="mt-6 max-w-xl text-muted-foreground">{profile.tagline}</p>
 
-          <div className="mt-8 flex items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-4">
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-5 py-2.5 text-sm font-medium transition-colors hover:bg-neutral-800"
@@ -47,8 +47,8 @@ export default function Home() {
 
       {/* Featured Projects */}
       <section className="border-b border-border">
-        <div className="mx-auto max-w-4xl px-6 py-16">
-          <div className="mb-8 flex items-end justify-between">
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
             <h2 className="text-xl font-medium">Featured Projects</h2>
             <Link
               href="/projects"
@@ -67,8 +67,8 @@ export default function Home() {
 
       {/* Who I Am */}
       <section className="border-b border-border">
-        <div className="mx-auto max-w-4xl px-6 py-16">
-          <div className="mb-6 flex items-end justify-between">
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
             <h2 className="text-xl font-medium">Who I Am</h2>
             <Link
               href="/services"
@@ -86,7 +86,7 @@ export default function Home() {
       </section>
 
      <section className="border-b border-border">
-        <div className="mx-auto max-w-4xl px-6 py-16">
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
           <h2 className="mb-8 text-xl font-medium">
             My Skills
           </h2>
@@ -107,7 +107,7 @@ export default function Home() {
 
       {/* Achievement */}
       <section className="border-b border-border">
-        <div className="mx-auto max-w-4xl px-6 py-16">
+        <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
           <h2 className="mb-6 text-xl font-medium">Achievement</h2>
           <div className="rounded-xl border border-border bg-muted/20 px-5">
             {achievements.map((a) => (
@@ -118,14 +118,16 @@ export default function Home() {
       </section>
       {/* Contribution Graph */}
       <section className="border-b border-border">
-        <div className="mx-auto max-w-5xl px-10 py-6">
-          <ContributionGraph />
+        <div className="mx-auto max-w-5xl overflow-x-auto px-4 py-6 sm:px-10">
+          <div className="min-w-[520px]">
+            <ContributionGraph />
+          </div>
         </div>
       </section>
 
       {/* Closing */}
       <section>
-        <div className="mx-auto max-w-4xl px-6 py-24 text-center">
+        <div className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 sm:py-24">
           <p className="text-sm text-muted-foreground">
             Ending on a note I try to live by
           </p>

@@ -3,7 +3,7 @@ import { services } from "@/data/profile";
 
 export default function ServicesPage() {
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
       <h1 className="text-2xl font-medium">Services</h1>
 
       <p className="mt-2 text-muted-foreground">
@@ -26,7 +26,7 @@ export default function ServicesPage() {
               {service.points.map((point) => (
                 <li
                   key={point}
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                  className="flex items-start gap-2 text-sm text-muted-foreground"
                 >
                   <span className="h-1 w-1 rounded-full bg-muted-foreground" />
                   {point}

@@ -18,7 +18,7 @@ const bookmarks = [
 
 export default function BookmarksPage() {
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
       <h1 className="text-2xl font-medium">Bookmarks</h1>
       <p className="mt-2 text-muted-foreground">
         Kumpulan resource dan tools favorit yang sering saya pakai.

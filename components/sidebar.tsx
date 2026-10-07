@@ -20,7 +20,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-   <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col justify-between overflow-y-auto border-r border-border bg-background p-6 sm:flex">
+    <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 flex-col justify-between overflow-y-auto border-r border-border bg-background p-6 sm:flex">
       <div>
         <div className="flex items-center gap-3">
           <Avatar name={profile.name} src={profile.avatar} size={40} />
@@ -32,21 +32,30 @@ export default function Sidebar() {
 
         <nav className="mt-8 flex flex-col gap-1">
           {navItems.map((item) => {
-            const active = pathname === item.href;
+            const active =
+              pathname === item.href ||
+              (item.href !== "/" && pathname.startsWith(item.href));
+
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors ${
+                aria-current={active ? "page" : undefined}
+                className={`group relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-200 ${
                   active
-                    ? "bg-muted text-foreground"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    ? "bg-muted text-foreground shadow-sm ring-1 ring-border"
+                    : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
                 }`}
               >
-                <item.icon className="h-4 w-4" />
-                <span className="flex-1">{item.label}</span>
+                <span
+                  className={`absolute inset-y-1 left-1 w-0.5 rounded-full transition-all ${
+                    active ? "bg-foreground" : "bg-transparent"
+                  }`}
+                />
+                <item.icon className="relative z-10 h-4 w-4" />
+                <span className="relative z-10 flex-1">{item.label}</span>
                 {active && (
-                  <span className="h-1.5 w-1.5 rounded-full bg-foreground" />
+                  <span className="relative z-10 h-2 w-2 rounded-full bg-foreground/80" />
                 )}
               </Link>
             );

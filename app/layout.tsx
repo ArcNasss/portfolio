@@ -28,11 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className="h-full antialiased">
-      <body className="flex min-h-full bg-background text-foreground">
+      <body className="flex min-h-full overflow-x-hidden bg-background text-foreground">
         <Sidebar />
-        <div className="flex min-h-full flex-1 flex-col sm:pl-64">
+        <div className="flex min-h-full min-w-0 flex-1 flex-col sm:pl-64">
           <MobileNav />
-          <main className="relative flex-1">{children}</main>
+          <main className="relative min-w-0 flex-1">{children}</main>
         </div>
       </body>
     </html>

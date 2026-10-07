@@ -18,7 +18,7 @@ export default async function ProjectDetailPage({
   if (!project) return notFound();
 
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
       <Link
         href="/projects"
         className="text-sm text-muted-foreground hover:text-foreground"
@@ -26,8 +26,8 @@ export default async function ProjectDetailPage({
         ← Back to Projects
       </Link>
 
-      <div className="mt-6 flex items-center justify-between">
-        <h1 className="text-2xl font-medium">{project.title}</h1>
+      <div className="mt-6 flex flex-wrap items-baseline justify-between gap-2">
+        <h1 className="min-w-0 text-2xl font-medium">{project.title}</h1>
         <span className="text-sm text-muted-foreground">{project.year}</span>
       </div>
 
